@@ -1,0 +1,20 @@
+'use client'
+import React from 'react'
+
+interface Props{
+    error : Error,
+    reset: () => void
+}
+
+const ErrorPage = ({error, reset} : Props) => {
+// use sentry.io for more profressional logging
+    console.log('Error: ', error)
+  return (
+    <>
+    <div>An unexpected Error has occured</div>
+    <button className="btn" onClick={() => reset}>Retry</button>
+    </>
+  )
+}
+
+export default ErrorPage
